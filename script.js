@@ -18,7 +18,6 @@
                 
                 const successMsg = document.getElementById('form-success');
                 successMsg.style.display = 'block';
-                successMsg.classList.add('animate__animated', 'animate__fadeIn');
                 
                 this.reset();
                 
@@ -29,26 +28,3 @@
                 document.getElementById('status').innerText = 'Error submitting form. Please try again.';
             }
         });
-
-        const bannerSlides = document.querySelectorAll('.banner-slide');
-        let currentSlide = 0;
-        
-        function changeSlide() {
-            bannerSlides[currentSlide].classList.remove('active');
-            bannerSlides[currentSlide].style.animation = 'slideOutToBottom 1.5s forwards';
-            
-            currentSlide = (currentSlide + 1) % bannerSlides.length;
-            
-            setTimeout(() => {
-                bannerSlides[currentSlide].classList.add('active');
-                bannerSlides[currentSlide].style.animation = 'slideInFromTop 1.5s forwards';
-                
-                const prevSlide = (currentSlide - 1 + bannerSlides.length) % bannerSlides.length;
-                bannerSlides[prevSlide].style.animation = '';
-            }, 1500);
-        }
-        
-        bannerSlides[0].classList.add('active');
-        bannerSlides[0].style.animation = 'slideInFromTop 1.5s forwards';
-        
-        setInterval(changeSlide, 5000);

@@ -1,89 +1,80 @@
- body {
+  :root {
+            --primary: #0d6efd;
+            --secondary: #0b5ed7;
+            --dark: #212529;
+            --light: #f8f9fa;
+        }
+        
+        body {
             font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
         }
         
-        .banner-content h1 {
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
             font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white !important;
         }
         
-        .coming-soon-banner {
-            height: 100vh;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
+        .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s;
         }
-
-        .banner-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        .hero-section {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            transform: translateY(100%);
-            transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
-            opacity: 0;
-            z-index: 1;
+            display: flex;
+            align-items: center;
+            color: white;
         }
-
-        .banner-slide.active {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .banner-slide::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-        }
-
-        .banner-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .banner-content h1 {
+        
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
             font-size: 4rem;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
             margin-bottom: 1.5rem;
-            animation: fadeInDown 1.5s;
         }
-
-        .banner-content p {
+        
+        .hero-content p {
             font-size: 1.5rem;
             text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-            animation: fadeInUp 1.5s;
             font-weight: 600;
         }
-
+        
         .cta-button {
-            margin-top: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
             padding: 12px 30px;
             font-size: 1.2rem;
-            font-weight: 600;
             border-radius: 50px;
-            background-color: #0d6efd;
-            border: none;
+            font-weight: 600;
             transition: all 0.3s;
+            margin-top: 2rem;
         }
-
+        
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            background-color: #0b5ed7;
         }
-
+        
         .contact-card {
             border: none;
             border-radius: 15px;
@@ -91,50 +82,48 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-
+        
         .contact-card:hover {
             transform: translateY(-5px);
         }
-
+        
         .card-header {
-            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
-
+        
         .form-control {
             border-radius: 8px;
             padding: 12px 15px;
             border: 1px solid #e0e0e0;
             transition: all 0.3s;
         }
-
+        
         .form-control:focus {
-            border-color: #0d6efd;
+            border-color: var(--primary);
             box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
         }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #0d6efd 0%, #0b5ed7 100%);
+        
+        .btn-submit {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             border: none;
             padding: 10px 25px;
             border-radius: 8px;
             font-weight: 500;
             transition: all 0.3s;
         }
-
-        .btn-primary:hover {
+        
+        .btn-submit:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
         }
-
+        
         footer {
-            background: linear-gradient(135deg, #343a40 0%, #212529 100%);
+            background: linear-gradient(135deg, var(--dark), #343a40);
             color: white;
-            padding-top: 2.5rem;
-            padding-bottom: 1.5rem;
-            margin-top: 5rem;
+            padding: 2.5rem 0 1.5rem;
             position: relative;
         }
-
+        
         footer::before {
             content: '';
             position: absolute;
@@ -142,63 +131,24 @@
             left: 0;
             right: 0;
             height: 5px;
-            background: linear-gradient(90deg, #0d6efd, #0dcaf0, #0d6efd);
+            background: linear-gradient(90deg, var(--primary), #0dcaf0, var(--primary));
         }
-
-        footer a {
-            color: #adb5bd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-
+        
         #form-success {
             display: none;
-            animation: fadeIn 0.5s;
         }
-
+        
         @media (max-width: 768px) {
-            .coming-soon-banner {
-                height: 70vh;
-                min-height: 400px;
+            .hero-section {
+                height: 80vh;
+                min-height: 500px;
             }
             
-            .banner-content h1 {
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
             
-            .banner-content p {
+            .hero-content p {
                 font-size: 1.2rem;
-            }
-            
-            .cta-button {
-                padding: 10px 20px;
-                font-size: 1rem;
-            }
-        }
-
-        @keyframes slideInFromTop {
-            0% {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideOutToBottom {
-            0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100%);
-                opacity: 0;
             }
         }
